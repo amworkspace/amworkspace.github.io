@@ -7,6 +7,9 @@ function turn_graph(id){
         image.style.display = "block";
 }
 
-function notify() {
-    console.log('hahas')
+function notify(type) {
+    if (type == 'diagnosis')
+        alert('Диагноз отправлен!')
+    else if (type == 'therapy')
+        alert('Терапия назначена!')
 }
