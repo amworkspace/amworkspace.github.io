@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="col-lg-12">
-                        <input class="col-lg-12" type="search" name="patient_input" style="border-radius: 12px; height: 40px; margin-top: 25px;" placeholder=" Рубаков Дмитрий Владимиро...">
+                        <input class="col-lg-12" type="search" name="patient_input" style="border-radius: 12px; height: 40px; margin-top: 25px; border-color: #383838;" placeholder=" Рубаков Дмитрий Владимиро...">
                     </div>
 
                     <div class="col-lg-12" style="text-align: center; color: #fff; font-size: 20px; font-weight: bold; margin-top: 35px;">
@@ -34,7 +34,7 @@
 
                     <div class="row" style="margin-top: 15px; font-size: 18px; color: #fff;">
                         <div class="col-lg-2">
-                            <input type="checkbox" name="pressure_check" style="margin-left: 50%;" onchange="turn_graph('graphic_pressure')" checked>
+                            <input type="checkbox" name="pressure_check" style="margin-left: 50%;" onchange="turn_graph('graphic_pressure')" checked id="checkbox">
                         </div>
                         <div class="col-lg-8">
                             Давление
@@ -48,7 +48,7 @@
 
                     <div class="row" style="margin-top: 15px; font-size: 18px; color: #fff;">
                         <div class="col-lg-2">
-                            <input type="checkbox" name="temp_check" style="margin-left: 50%;" id="turn_temp" onchange="turn_graph('graphic_temp')">
+                            <input type="checkbox" name="temp_check" style="margin-left: 50%;" onchange="turn_graph('graphic_temp')" id="checkbox">
                         </div>
                         <div class="col-lg-8">
                             Температура
@@ -62,7 +62,7 @@
 
                     <div class="row" style="margin-top: 15px; font-size: 18px; color: #fff;">
                         <div class="col-lg-2">
-                            <input type="checkbox" name="pulse_check" style="margin-left: 50%;" onchange="turn_graph('graphic_pulse')">
+                            <input type="checkbox" name="pulse_check" style="margin-left: 50%;" onchange="turn_graph('graphic_pulse')" id="checkbox">
                         </div>
                         <div class="col-lg-8">
                             Пульс
@@ -81,7 +81,7 @@
 
                     <div class="row" style="margin-top: 15px; font-size: 18px; color: #fff;">
                         <div class="col-lg-2">
-                            <input type="checkbox" name="temp_check" style="margin-left: 50%;">
+                            <input type="checkbox" name="temp_check" style="margin-left: 50%;" id="checkbox">
                         </div>
                         <div class="col-lg-8">
                             Сутки
@@ -90,7 +90,7 @@
 
                     <div class="row" style="margin-top: 15px; font-size: 18px; color: #fff;">
                         <div class="col-lg-2">
-                            <input type="checkbox" name="temp_check" style="margin-left: 50%;" checked>
+                            <input type="checkbox" name="temp_check" style="margin-left: 50%;" checked id="checkbox">
                         </div>
                         <div class="col-lg-8">
                             Неделя
@@ -99,7 +99,7 @@
 
                     <div class="row" style="margin-top: 15px; font-size: 18px; color: #fff;">
                         <div class="col-lg-2">
-                            <input type="checkbox" name="temp_check" style="margin-left: 50%;">
+                            <input type="checkbox" name="temp_check" style="margin-left: 50%;" id="checkbox">
                         </div>
                         <div class="col-lg-8">
                             Месяц
@@ -115,12 +115,12 @@
                     </div>
 
                     <div class="col-lg-8" style="margin-top: 25px; display:block; margin-left: auto; margin-right: auto; width: 80%;">
-                        <img src="assets/graphs/yellow_graph.png" alt="graph" id="graphic_pressure" style="display: block; margin-top: 15px;">
-                        <img src="assets/graphs/green_graph.png" alt="graph" id="graphic_temp" style="display: none; margin-top: 15px;">
-                        <img src="assets/graphs/blue_graph.png" alt="graph" id="graphic_pulse" style="display: none; margin-top: 15px;">
+                        <img src="assets/graphs/yellow_graph.png" alt="graph" class="graphic" id="graphic_pressure" style="display: block; margin-top: 15px;">
+                        <img src="assets/graphs/green_graph.png" alt="graph" class="graphic" id="graphic_temp" style="display: none; margin-top: 15px;">
+                        <img src="assets/graphs/blue_graph.png" alt="graph" class="graphic" id="graphic_pulse" style="display: none; margin-top: 15px;">
                     </div>
 
-                    <div class="col-lg-12" style="text-align: center; font-size: 21px; margin-top: 25px; color: #fff;">
+                    <div class="col-lg-12" style="text-align: center; font-size: 21px; margin-top: 25px; color: #fff; font-weight: bold;">
                         Информация по пациену
                     </div>
 
@@ -135,11 +135,11 @@
                     <div class="col-lg-1"></div>
 
                     <div class="col-lg-6">
-                        <input class="col-lg-12" type="text" name="patient_input" style="border-radius: 12px; height: 40px; margin-top: 25px;" placeholder=" Поставить диагноз">
+                        <input class="col-lg-12" type="text" name="patient_input" style="border-radius: 12px; height: 40px; margin-top: 25px; border-color: #383838;" placeholder=" Поставить диагноз">
                     </div>
 
                     <div class="col-lg-5" style="margin-top: 30px;">
-                        <svg width="37" height="27" viewBox="0 0 37 27" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="notify()">
+                        <svg width="37" height="27" viewBox="0 0 37 27" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="notify('diagnosis')" id="send_plane">
                             <path d="M36 1L1 11.2273L9.59049 15.6706M36 1L24.7097 26L19.0645 20.3182M36 1L9.59049 15.6706M36 1L16.3483 17.739M16.3483 17.739L11.8813 24.8636M16.3483 17.739L19.0645 20.3182M11.8813 24.8636L9.59049 15.6706M11.8813 24.8636L19.0645 20.3182" stroke="#A3A3A3" stroke-width="0.7"/>
                         </svg>
                     </div>
@@ -147,11 +147,11 @@
                     <div class="col-lg-1"></div>
 
                     <div class="col-lg-6">
-                        <input class="col-lg-12" type="text" name="patient_input" style="border-radius: 12px; height: 40px; margin-top: 25px;" placeholder=" Назначить терапию">
+                        <input class="col-lg-12" type="text" name="patient_input" style="border-radius: 12px; height: 40px; margin-top: 25px; border-color: #383838;" placeholder=" Назначить терапию">
                     </div>
 
                     <div class="col-lg-5" style="margin-top: 30px;">
-                        <svg width="37" height="27" viewBox="0 0 37 27" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="notify()">
+                        <svg width="37" height="27" viewBox="0 0 37 27" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="notify('therapy')" id="send_plane">
                             <path d="M36 1L1 11.2273L9.59049 15.6706M36 1L24.7097 26L19.0645 20.3182M36 1L9.59049 15.6706M36 1L16.3483 17.739M16.3483 17.739L11.8813 24.8636M16.3483 17.739L19.0645 20.3182M11.8813 24.8636L9.59049 15.6706M11.8813 24.8636L19.0645 20.3182" stroke="#A3A3A3" stroke-width="0.7"/>
                         </svg>
                     </div>
