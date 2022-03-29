@@ -6,3 +6,7 @@ function turn_graph(id){
     else
         image.style.display = "block";
 }
+
+function notify() {
+    console.log('hahas')
+}
